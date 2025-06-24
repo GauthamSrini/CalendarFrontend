@@ -1,0 +1,131 @@
+/* src/pages/Home.css */
+.home-container {
+  font-family: poppins;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.today-summary {
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin-bottom: 1rem;
+  width: 79vw;
+}
+
+.today-date {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  padding-left: 20px;
+  border-left: 3px solid #59AF32;
+}
+
+.Today-Day{
+    font-size: 15px;
+    color: #59AF32;
+}
+
+.dateMY{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.editEventBtn{
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    gap: 5px;
+    height: fit-content;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 3px 5px;
+    color: #8686A1;
+    cursor: pointer;
+}
+
+.today-events {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 10px;
+}
+
+.eventsTitle{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.event-title {
+  background-color: #EFF7EB;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  font-size: 13px;
+  display: flex;
+  gap: 10px;
+}
+
+.no-events {
+  color: #999;
+  font-style: italic;
+}
+
+.calendar-wrapper {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 80vw;
+  height: 63vh;
+  overflow-y: scroll;
+  border: 2px solid #EFEFEF;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.NavigationIconDiv{
+    width: 50px;
+}
+
+.NavigationIcon{
+    width: 100%;
+    background-color: #F6F5FA;
+    color: #bec2cf;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.fullEventTitle{
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 500;
+}
+.monthSpan{
+    font-size: 14px;
+    font-weight: normal;
+    color: #8686A1;
+}
+.calendar-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.calendar-nav button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.calendar-nav span {
+  font-weight: bold;
+  font-size: 1rem;
+}

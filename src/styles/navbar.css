@@ -1,0 +1,65 @@
+.sideBar {
+  height: 100%;
+  border-right: 2px solid #efefef;
+  background-color: #f6f5fa;
+}
+
+.menu-vertical .active {
+  background-color: #eeecf8 !important;
+  color: #2e2c38 !important;
+  font-weight: 500;
+  border-right: 3px solid #6948cb;
+}
+
+.menu-vertical .menuItem:hover {
+  background-color: rgb(150, 241, 124);
+  color: white;
+}
+
+.subtitle {
+  padding-left: 16px;
+  font-size: 14px;
+  color: #b5b7c5;
+  font-weight: 500;
+}
+
+.menuitemuni {
+  color: #8686a1;
+  font-size: 15px;
+  font-family: poppins;
+  color: "#B3B8BB";
+  height: "55px";
+  border-right: "none";
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.menuitemuni .ps-menu-button {
+  padding-left: 10px !important;
+}
+.projectTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  background-color: white;
+  font-size: 13px;
+  padding: 8px 8px;
+  border-radius: 5px;
+  border: 2px solid #efefef;
+}
+.projectTitle img {
+  width: 20px;
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .logoDiv {
+    display: none;
+  }
+}
