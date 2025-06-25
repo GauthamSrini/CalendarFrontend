@@ -9,7 +9,7 @@
 .today-summary {
   padding: 1rem 1.5rem;
   border-radius: 8px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(192, 190, 190, 0.2) 0px 2px 8px 0px;
   margin-bottom: 1rem;
   width: 79vw;
 }
@@ -19,30 +19,30 @@
   justify-content: space-between;
   margin-bottom: 0.5rem;
   padding-left: 20px;
-  border-left: 3px solid #59AF32;
+  border-left: 3px solid #59af32;
 }
 
-.Today-Day{
-    font-size: 15px;
-    color: #59AF32;
+.Today-Day {
+  font-size: 15px;
+  color: #59af32;
 }
 
-.dateMY{
-    font-size: 18px;
-    font-weight: 500;
+.dateMY {
+  font-size: 18px;
+  font-weight: 500;
 }
 
-.editEventBtn{
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    border-radius: 5px;
-    gap: 5px;
-    height: fit-content;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    padding: 3px 5px;
-    color: #8686A1;
-    cursor: pointer;
+.editEventBtn {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  gap: 5px;
+  height: fit-content;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 3px 5px;
+  color: #8686a1;
+  cursor: pointer;
 }
 
 .today-events {
@@ -53,13 +53,13 @@
   margin-top: 10px;
 }
 
-.eventsTitle{
-    font-size: 14px;
-    font-weight: 500;
+.eventsTitle {
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .event-title {
-  background-color: #EFF7EB;
+  background-color: #eff7eb;
   padding: 0.4rem 0.8rem;
   border-radius: 5px;
   font-size: 13px;
@@ -79,7 +79,7 @@
   width: 80vw;
   height: 63vh;
   overflow-y: scroll;
-  border: 2px solid #EFEFEF;
+  border: 2px solid #efefef;
 }
 
 .calendar-header {
@@ -89,28 +89,28 @@
   margin-bottom: 1rem;
 }
 
-.NavigationIconDiv{
-    width: 50px;
+.NavigationIconDiv {
+  width: 50px;
 }
 
-.NavigationIcon{
-    width: 100%;
-    background-color: #F6F5FA;
-    color: #bec2cf;
-    border-radius: 50%;
-    padding: 5px;
+.NavigationIcon {
+  width: 100%;
+  background-color: #f6f5fa;
+  color: #bec2cf;
+  border-radius: 50%;
+  padding: 5px;
 }
 
-.fullEventTitle{
-    display: flex;
-    flex-direction: column;
-    font-size: 16px;
-    font-weight: 500;
+.fullEventTitle {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 500;
 }
-.monthSpan{
-    font-size: 14px;
-    font-weight: normal;
-    color: #8686A1;
+.monthSpan {
+  font-size: 14px;
+  font-weight: normal;
+  color: #8686a1;
 }
 .calendar-nav {
   display: flex;
@@ -128,4 +128,20 @@
 .calendar-nav span {
   font-weight: bold;
   font-size: 1rem;
+}
+
+.custom-toast {
+  font-size: 14px;
+  background-color: white !important;
+  color: rgb(29, 29, 29) !important;
+}
+.custom-toast-body {
+  font-weight: bold;
+  font-family: "Excon" !important;
+}
+.custom-toast-progress {
+  background-color: #ff7043 !important;
+}
+.custom-toast-progress-success {
+  background-color: #3dd632 !important;
 }

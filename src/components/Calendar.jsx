@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import dayjs from "dayjs";
 import "../styles/Calendar.css";
 import isoWeek from "dayjs/plugin/isoWeek";
-import { Modal, Box, Typography, IconButton, Divider, Button } from "@mui/material";
+import {
+  Modal,
+  Box,
+  Typography,
+  IconButton,
+  Divider,
+  Button,
+} from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
@@ -12,12 +19,12 @@ import PublicIcon from "@mui/icons-material/Public";
 dayjs.extend(isoWeek);
 
 const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
   width: 360,
-  bgcolor: 'background.paper',
+  bgcolor: "background.paper",
   borderRadius: 3,
   boxShadow: 24,
   p: 3,
@@ -79,6 +86,20 @@ const Calendar = ({ currentDate, events }) => {
                 key={idx}
                 className="calendar-event"
                 onClick={() => handleEventClick(event)}
+                style={{
+                  backgroundColor:
+                    event.completion_status === 0
+                      ? "#FEF8E8"
+                      : event.completion_status === 1
+                      ? "#F6FAF3"
+                      : "#F7F7F7",
+                  borderLeftColor:
+                    event.completion_status === 0
+                      ? "#FEE5A5"
+                      : event.completion_status === 1
+                      ? "#4CAF50"
+                      : "#DEDEDE",
+                }}
               >
                 {event.title}
               </div>
@@ -86,12 +107,16 @@ const Calendar = ({ currentDate, events }) => {
           </div>
         );
       })}
-      <Modal open={openModal} onClose={()=>setOpenModal(false)}   BackdropProps={{
+      <Modal
+        open={openModal}
+        onClose={() => setOpenModal(false)}
+        BackdropProps={{
           sx: {
             backdropFilter: "blur(6px)",
             backgroundColor: "rgba(0,0,0,0.15)",
           },
-        }}>
+        }}
+      >
         <Box sx={style}>
           <Box
             display="flex"
@@ -100,7 +125,7 @@ const Calendar = ({ currentDate, events }) => {
             mb={1}
           >
             <Typography variant="h7">Event</Typography>
-            <IconButton onClick={()=>setOpenModal(false)}>
+            <IconButton onClick={() => setOpenModal(false)}>
               <CloseIcon />
             </IconButton>
           </Box>
@@ -109,19 +134,42 @@ const Calendar = ({ currentDate, events }) => {
             {selectedEvent.title}
           </Typography>
 
-          <Box display="flex" alignItems="center" mt={2} sx={{color:"#68667D"}}>
+          <Box
+            display="flex"
+            alignItems="center"
+            mt={2}
+            sx={{ color: "#68667D" }}
+          >
             <AccessTimeIcon sx={{ fontSize: 20, mr: 1 }} />
             <Typography>
-              { dayjs(`${selectedEvent.date} ${selectedEvent.start_time}`).format("h:mm A")} → {dayjs(`${selectedEvent.date} ${selectedEvent.end_time}`).format("h:mm A")}
+              {dayjs(
+                `${selectedEvent.date} ${selectedEvent.start_time}`
+              ).format("h:mm A")}{" "}
+              →{" "}
+              {dayjs(`${selectedEvent.date} ${selectedEvent.end_time}`).format(
+                "h:mm A"
+              )}
             </Typography>
           </Box>
 
-          <Box display="flex" alignItems="center" mt={1} sx={{color:"#68667D"}}>
+          <Box
+            display="flex"
+            alignItems="center"
+            mt={1}
+            sx={{ color: "#68667D" }}
+          >
             <CalendarTodayIcon sx={{ fontSize: 20, mr: 1 }} />
-            <Typography>{ dayjs(selectedEvent.date).format("MMM D, ddd")}</Typography>
+            <Typography>
+              {dayjs(selectedEvent.date).format("MMM D, ddd")}
+            </Typography>
           </Box>
 
-          <Box display="flex" alignItems="center" mt={1} sx={{color:"#68667D"}}>
+          <Box
+            display="flex"
+            alignItems="center"
+            mt={1}
+            sx={{ color: "#68667D" }}
+          >
             <PublicIcon sx={{ fontSize: 20, mr: 1 }} />
             <Typography>GMT+5:30 Kolkata</Typography>
           </Box>
@@ -129,15 +177,25 @@ const Calendar = ({ currentDate, events }) => {
           <Button
             fullWidth
             sx={{
-              borderLeft: "3px solid #59AF32",
+              backgroundColor:
+                selectedEvent.completion_status === 0
+                  ? "#FEF8E8"
+                  : selectedEvent.completion_status === 1
+                  ? "#F6FAF3"
+                  : "#F7F7F7",
+              borderLeft:
+                selectedEvent.completion_status === 0
+                  ? "3px solid #FEE5A5"
+                  : selectedEvent.completion_status === 1
+                  ? "3px solid #4CAF50"
+                  : "#DEDEDE",
               borderRadius: "5px",
-              color:"black",
-              backgroundColor:"#F6FAF3",
+              color: "black",
               textTransform: "none",
               fontWeight: 500,
             }}
           >
-            Completed
+            {selectedEvent.completion_status === 1 ? "Completed" : "Pending"}
           </Button>
         </Box>
       </Modal>

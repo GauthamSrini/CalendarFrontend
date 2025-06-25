@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import dayjs from "dayjs";
 import Calendar from "../components/Calendar";
 import "../styles/Home.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   Modal,
   Box,
@@ -17,6 +19,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker, TimePicker } from "@mui/x-date-pickers";
+import seedEvents from "../assets/events.json";
 
 const Home = () => {
   const [currentDate, setCurrentDate] = useState(dayjs());
@@ -27,9 +30,7 @@ const Home = () => {
     if (saved) {
       setEvents(JSON.parse(saved));
     } else {
-      fetch("/events.json")
-        .then((r) => r.json())
-        .then((data) => setEvents(data));
+      setEvents(seedEvents); // instant, no network call
     }
   }, []);
 
@@ -88,6 +89,12 @@ const Home = () => {
     setEvents((prev) => [...prev, formatted]);
     setOpenAdd(false);
     resetForm();
+
+    toast.success("Event Added Successfully", {
+      className: "custom-toast",
+      bodyClassName: "custom-toast-body",
+      progressClassName: "custom-toast-progress-success",
+    });
   };
 
   return (
@@ -244,7 +251,14 @@ const Home = () => {
             )}
 
             <Box sx={{ display: "flex", justifyContent: "flex-end", gap: 2 }}>
-              <Button onClick={() => setOpenAdd(false)}>Cancel</Button>
+              <Button
+                onClick={() => {
+                  setOpenAdd(false);
+                  resetForm();
+                }}
+              >
+                Cancel
+              </Button>
               <Button
                 variant="contained"
                 sx={{
@@ -261,6 +275,18 @@ const Home = () => {
           </Box>
         </Box>
       </Modal>
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 };

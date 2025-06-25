@@ -1,8 +1,8 @@
-.MainLayout{
+.MainLayout {
   display: flex;
   flex-direction: row;
   width: 100%;
-} 
+}
 ::-webkit-scrollbar {
   width: 4px !important;
 }
@@ -12,7 +12,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #6948CB;
+  background-color: #6948cb;
   border-radius: 5px;
   border: none;
 }

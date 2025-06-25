@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import { Link, NavLink } from "react-router-dom";
 import "../styles/navbar.css";
-import img from '/icon-pic.png'
-import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
-import EventNoteOutlinedIcon from '@mui/icons-material/EventNoteOutlined';
+import img from "/icon-pic.png";
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import EventNoteOutlinedIcon from "@mui/icons-material/EventNoteOutlined";
 
 const SideNavBar = () => {
-
   return (
     <Sidebar
       className="sideBar"
@@ -18,7 +17,9 @@ const SideNavBar = () => {
       <Menu className="menu-vertical">
         <div>
           <div className="projectTitle">
-            <div><img src={img} alt="" /></div>
+            <div>
+              <img src={img} alt="" />
+            </div>
             <div>World of Plans</div>
           </div>
           <MenuItem
@@ -39,7 +40,7 @@ const SideNavBar = () => {
             Events{" "}
           </MenuItem>
         </div>
-      </Menu> 
+      </Menu>
     </Sidebar>
   );
 };
