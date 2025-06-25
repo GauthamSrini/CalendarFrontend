@@ -86,7 +86,12 @@ const Calendar = ({ currentDate, events }) => {
           </div>
         );
       })}
-      <Modal open={openModal} onClose={()=>setOpenModal(false)}>
+      <Modal open={openModal} onClose={()=>setOpenModal(false)}   BackdropProps={{
+          sx: {
+            backdropFilter: "blur(6px)",
+            backgroundColor: "rgba(0,0,0,0.15)",
+          },
+        }}>
         <Box sx={style}>
           <Box
             display="flex"
